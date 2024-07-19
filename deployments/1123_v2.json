@@ -1,0 +1,23 @@
+{
+    "First contract block": 4165852,
+    "ConfigurableUtil": "0x3DBCB02692632520f1a28fE03E1979A1994f7b9A",
+    "FundingRateUtil": "0x712d7faE02aC73219666d637181f241b2AeFe9c2",
+    "LiquidityPositionUtil": "0x54344EBDEeb90179fF51cb77Af01D19B30A94583",
+    "MarketUtil": "0xfB699C0C7346D2Df27467C699B6b94583f3A4607",
+    "PositionUtil": "0x27bDb40f115146A74c106A43f1dcBFb4Ff27e908",
+    "deployer address": "0x8E71fbF0f1a49ed1a3c774Bf7477dc39f66D268f",
+    "nonce": 184,
+    "Router": "0xd251bbE2314D8791E985D9a47b1F69CBC63c4049",
+    "OrderBook": "0xEf59F743af8bA3a438457A3678170c4aA6a6EdBa",
+    "PositionRouter": "0x81E167C003796b12b4cE0b55D26655C6e642a076",
+    "👿👿ignoreReferencePriceFeedError is set to true, reference price feed error will be ignored👿👿": 0,
+    "PriceFeed": "0x0e2d340b8b4f0027FEDFb70422D51778F18f75B9",
+    "MarketDescriptorDeployer": "0x85Aa6b328dc7763C380ab246119cbacF7111642E",
+    "MarketIndexer": "0x436a5ED3729dbad6A19BC141151122F676247aA8",
+    "MarketManager": "0x8769F264CDC5e893C3216F4E4a880b95Ff4b652d",
+    "MixedExecutor": "0x310e0B53eE8cfb22A18a6B1157EE6cC5AC7C21B2",
+    "ExecutorAssistant": "0x88b56Ef1eD35EEC2a82DF11344016d81cf800a1C",
+    "Liquidator": "0x51EE12236e9D90A30C57C65A822411601e44017A",
+    "FarmRewardDistributor": "0x62E965886472653304E2A6FD8903f57749e64fA0",
+    "RewardCollector": "0x8Fe0A2A88E680b64ac59185ECa6883a07746899D"
+}
