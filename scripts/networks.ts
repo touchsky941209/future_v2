@@ -1400,7 +1400,7 @@ export const networks = {
     },
     
     "b2testnet": {
-        usd: "0x18CB9a524564CeA5e8faD4dCa9Ad5DDe6cF212e3",
+        usd: "0x05c9e0a1D372d3e160a0E34ec55Ff77a2aA79Aab",
         usdChainLinkPriceFeed: "0x3f3f5dF88dC9F13eac63DF89EC16ef6e7E25DdE7",
         minPositionRouterExecutionFee: ethers.parseUnits("0.0003", "ether"),
         minOrderBookExecutionFee: ethers.parseUnits("0.0004", "ether"),
