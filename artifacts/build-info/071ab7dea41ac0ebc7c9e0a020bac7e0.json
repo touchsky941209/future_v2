@@ -1,0 +1,216 @@
+{
+  "id": "071ab7dea41ac0ebc7c9e0a020bac7e0",
+  "_format": "hh-sol-build-info-1",
+  "solcVersion": "0.8.23",
+  "solcLongVersion": "0.8.23+commit.f704f362",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "contracts/test/RevertedFeeReceiver.sol": {
+        "content": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity =0.8.23;\r\n\r\ncontract RevertedFeeReceiver {\r\n    receive() external payable {\r\n        revert(\"Reverted\");\r\n    }\r\n}\r\n"
+      }
+    },
+    "settings": {
+      "evmVersion": "paris",
+      "viaIR": true,
+      "optimizer": {
+        "enabled": true,
+        "runs": 100000000
+      },
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ],
+          "": [
+            "ast"
+          ]
+        }
+      }
+    }
+  },
+  "output": {
+    "contracts": {
+      "contracts/test/RevertedFeeReceiver.sol": {
+        "RevertedFeeReceiver": {
+          "abi": [
+            {
+              "stateMutability": "payable",
+              "type": "receive"
+            }
+          ],
+          "evm": {
+            "bytecode": {
+              "functionDebugData": {},
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "6080806040523460135760a1908160198239f35b600080fdfe6080806040523615600f57600080fd5b807f08c379a0000000000000000000000000000000000000000000000000000000006064925260206004820152600860248201527f52657665727465640000000000000000000000000000000000000000000000006044820152fdfea2646970667358221220916bc807f0d31946083b6c847a6dfc73d80e1aceb9028481c4e756c014f639b164736f6c63430008170033",
+              "opcodes": "PUSH1 0x80 DUP1 PUSH1 0x40 MSTORE CALLVALUE PUSH1 0x13 JUMPI PUSH1 0xA1 SWAP1 DUP2 PUSH1 0x19 DUP3 CODECOPY RETURN JUMPDEST PUSH1 0x0 DUP1 REVERT INVALID PUSH1 0x80 DUP1 PUSH1 0x40 MSTORE CALLDATASIZE ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH32 0x8C379A000000000000000000000000000000000000000000000000000000000 PUSH1 0x64 SWAP3 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x8 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x5265766572746564000000000000000000000000000000000000000000000000 PUSH1 0x44 DUP3 ADD MSTORE REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP2 PUSH12 0xC807F0D31946083B6C847A6D 0xFC PUSH20 0xD80E1ACEB9028481C4E756C014F639B164736F6C PUSH4 0x43000817 STOP CALLER ",
+              "sourceMap": "68:103:0:-:0;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+              "functionDebugData": {},
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "6080806040523615600f57600080fd5b807f08c379a0000000000000000000000000000000000000000000000000000000006064925260206004820152600860248201527f52657665727465640000000000000000000000000000000000000000000000006044820152fdfea2646970667358221220916bc807f0d31946083b6c847a6dfc73d80e1aceb9028481c4e756c014f639b164736f6c63430008170033",
+              "opcodes": "PUSH1 0x80 DUP1 PUSH1 0x40 MSTORE CALLDATASIZE ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST DUP1 PUSH32 0x8C379A000000000000000000000000000000000000000000000000000000000 PUSH1 0x64 SWAP3 MSTORE PUSH1 0x20 PUSH1 0x4 DUP3 ADD MSTORE PUSH1 0x8 PUSH1 0x24 DUP3 ADD MSTORE PUSH32 0x5265766572746564000000000000000000000000000000000000000000000000 PUSH1 0x44 DUP3 ADD MSTORE REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 SWAP2 PUSH12 0xC807F0D31946083B6C847A6D 0xFC PUSH20 0xD80E1ACEB9028481C4E756C014F639B164736F6C PUSH4 0x43000817 STOP CALLER ",
+              "sourceMap": "68:103:0:-:0;;;;;;;;;;;;142:18;;68:103;142:18;;68:103;142:18;;;68:103;;;;;;;;;;;142:18"
+            },
+            "methodIdentifiers": {}
+          },
+          "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"stateMutability\":\"payable\",\"type\":\"receive\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/RevertedFeeReceiver.sol\":\"RevertedFeeReceiver\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":100000000},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/test/RevertedFeeReceiver.sol\":{\"keccak256\":\"0x3e7422049f75506f462d721d76da9d1479e24e8eb988b4b47d71e403c6449c91\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://bf66b138d8b523a5878ca086177b8592e46b6927a02c81e8cd61071d8a4a7927\",\"dweb:/ipfs/QmVuVrywjHjHcXk8TMaySMAMPYXcDgVm6opfWmUqDcJX62\"]}},\"version\":1}"
+        }
+      }
+    },
+    "sources": {
+      "contracts/test/RevertedFeeReceiver.sol": {
+        "ast": {
+          "absolutePath": "contracts/test/RevertedFeeReceiver.sol",
+          "exportedSymbols": {
+            "RevertedFeeReceiver": [
+              10
+            ]
+          },
+          "id": 11,
+          "license": "UNLICENSED",
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 1,
+              "literals": [
+                "solidity",
+                "=",
+                "0.8",
+                ".23"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "40:24:0"
+            },
+            {
+              "abstract": false,
+              "baseContracts": [],
+              "canonicalName": "RevertedFeeReceiver",
+              "contractDependencies": [],
+              "contractKind": "contract",
+              "fullyImplemented": true,
+              "id": 10,
+              "linearizedBaseContracts": [
+                10
+              ],
+              "name": "RevertedFeeReceiver",
+              "nameLocation": "77:19:0",
+              "nodeType": "ContractDefinition",
+              "nodes": [
+                {
+                  "body": {
+                    "id": 8,
+                    "nodeType": "Block",
+                    "src": "131:37:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "arguments": [
+                            {
+                              "hexValue": "5265766572746564",
+                              "id": 5,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": true,
+                              "kind": "string",
+                              "lValueRequested": false,
+                              "nodeType": "Literal",
+                              "src": "149:10:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_stringliteral_0b9f009e1ebc7fdf9d770ebdfd2ce12cfc86c418e1b582da410e72419ea417d9",
+                                "typeString": "literal_string \"Reverted\""
+                              },
+                              "value": "Reverted"
+                            }
+                          ],
+                          "expression": {
+                            "argumentTypes": [
+                              {
+                                "typeIdentifier": "t_stringliteral_0b9f009e1ebc7fdf9d770ebdfd2ce12cfc86c418e1b582da410e72419ea417d9",
+                                "typeString": "literal_string \"Reverted\""
+                              }
+                            ],
+                            "id": 4,
+                            "name": "revert",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [
+                              -19,
+                              -19
+                            ],
+                            "referencedDeclaration": -19,
+                            "src": "142:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_function_revert_pure$_t_string_memory_ptr_$returns$__$",
+                              "typeString": "function (string memory) pure"
+                            }
+                          },
+                          "id": 6,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "kind": "functionCall",
+                          "lValueRequested": false,
+                          "nameLocations": [],
+                          "names": [],
+                          "nodeType": "FunctionCall",
+                          "src": "142:18:0",
+                          "tryCall": false,
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 7,
+                        "nodeType": "ExpressionStatement",
+                        "src": "142:18:0"
+                      }
+                    ]
+                  },
+                  "id": 9,
+                  "implemented": true,
+                  "kind": "receive",
+                  "modifiers": [],
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 2,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "111:2:0"
+                  },
+                  "returnParameters": {
+                    "id": 3,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "131:0:0"
+                  },
+                  "scope": 10,
+                  "src": "104:64:0",
+                  "stateMutability": "payable",
+                  "virtual": false,
+                  "visibility": "external"
+                }
+              ],
+              "scope": 11,
+              "src": "68:103:0",
+              "usedErrors": [],
+              "usedEvents": []
+            }
+          ],
+          "src": "40:133:0"
+        },
+        "id": 0
+      }
+    }
+  }
+}

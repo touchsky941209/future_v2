@@ -1398,9 +1398,9 @@ export const networks = {
         ],
         mixedExecutors: ["0x587C4526d4134cad229E8beA5007ACf30Dc7e8Dd", "0xE6d7Ccc73e0F7E1063E2204ffFA7742CC25E3B38"],
     },
-    
+
     "b2testnet": {
-        usd: "0x05c9e0a1D372d3e160a0E34ec55Ff77a2aA79Aab",
+        usd: "0xf44Fad0121c698882CA90C2673b22F391FBE872f",
         usdChainLinkPriceFeed: "0x3f3f5dF88dC9F13eac63DF89EC16ef6e7E25DdE7",
         minPositionRouterExecutionFee: ethers.parseUnits("0.0003", "ether"),
         minOrderBookExecutionFee: ethers.parseUnits("0.0004", "ether"),
@@ -2017,5 +2017,1240 @@ export const networks = {
         ],
         mixedExecutors: ["0x587C4526d4134cad229E8beA5007ACf30Dc7e8Dd", "0xE6d7Ccc73e0F7E1063E2204ffFA7742CC25E3B38"],
     },
-
+    "bevmtestnet": {
+        usd: "0xCb02aD8f4be322Dc6e4a83D1623954769848061a",
+        usdChainLinkPriceFeed: "0x3f3f5dF88dC9F13eac63DF89EC16ef6e7E25DdE7",
+        minPositionRouterExecutionFee: ethers.parseUnits("0.0003", "ether"),
+        minOrderBookExecutionFee: ethers.parseUnits("0.0004", "ether"),
+        sequencerUptimeFeed: "0xFdB631F5EE196F0ed6FAa767959853A9F217697D",
+        ignoreReferencePriceFeedError: true,
+        equ: "0x415823B3f7A95573a1c170890bcaA555428c3ac2",
+        efc: "0x44E0d7c4C91775A2020CDE53f5dD8Ee266dC1b3F",
+        routerV1: "0x103117557e955bb3e85E812C1C09D6F741a4DEEA",
+        feeDistributor: "0x36da16Bf9e1e9B583F0d7D05dA8DF78851E6Dd41",
+        farmRewardDistributorV2: "0x7368F3e3D365dc7b86189d160183BA5b3Ff78c90",
+        markets: [
+            {
+                name: "ETH",
+                chainLinkPriceFeed: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: _100xCfg.baseCfg,
+                    feeRateCfg: _100xCfg.feeRateCfg,
+                    priceCfg: _100xCfg.priceCfg,
+                },
+            },
+            {
+                name: "BTC",
+                chainLinkPriceFeed: "0x6ce185860a4963106506C203335A2910413708e9",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._100xCfg.baseCfg,
+                        maxPositionLiquidity: 75_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _100xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._100xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 75_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "SOL",
+                chainLinkPriceFeed: "0x24ceA4b8ce57cdA5058b924B9B9987992450590c",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._50xCfg.baseCfg,
+                        maxPositionLiquidity: 5_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _50xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._50xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 5_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ARB",
+                chainLinkPriceFeed: "0xb2A824043730FE05F3DA2efaFa1CBbe83fa548D6",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "OP",
+                chainLinkPriceFeed: "0x205aaD468a11fd5D34fA7211bC6Bad5b3deB9b98",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "MATIC",
+                chainLinkPriceFeed: "0x52099D4523531f678Dfc568a7B1e5038aadcE1d6",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "AVAX",
+                chainLinkPriceFeed: "0x8bf61728eeDCE2F32c456454d87B5d6eD6150208",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "LINK",
+                chainLinkPriceFeed: "0x86E53CF1B870786351Da77A57575e79CB55812CB",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ORDI",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "DOGE",
+                chainLinkPriceFeed: "0x9A7FB1b3950837a8D9b40517626E11D4127C098C",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "XRP",
+                chainLinkPriceFeed: "0xB4AD57B52aB9141de9926a3e0C8dc6264c2ef205",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ADA",
+                chainLinkPriceFeed: "0xD9f615A9b820225edbA2d821c4A696a0924051c6",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "BNB",
+                chainLinkPriceFeed: "0x6970460aabF80C5BE983C6b74e5D06dEDCA95D4A",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "LTC",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ETC",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "FIL",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "SUI",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "TIA",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "DOT",
+                chainLinkPriceFeed: "0xa6bC5bAF2000424e90434bA7104ee399dEe80DEc",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "BLUR",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "INJ",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "SEI",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "TRB",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 900_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 900_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ATOM",
+                chainLinkPriceFeed: "0xCDA67618e51762235eacA373894F0C79256768fa",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "APT",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "NEAR",
+                chainLinkPriceFeed: "0xBF5C3fB2633e924598A46B9D07a174a9DBcF57C0",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "LDO",
+                chainLinkPriceFeed: "0xA43A34030088E6510FecCFb77E88ee5e7ed0fE64",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 900_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 900_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "DYDX",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "MKR",
+                chainLinkPriceFeed: "0xdE9f0894670c4EFcacF370426F10C3AD2Cdf147e",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 850_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 850_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "STX",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 900_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 900_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "FTM",
+                chainLinkPriceFeed: "0xFeaC1A3936514746e70170c0f539e70b23d36F19",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "RUNE",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 900_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 900_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "UNI",
+                chainLinkPriceFeed: "0x9C917083fDb403ab5ADbEC26Ee294f6EcAda2720",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "CRV",
+                chainLinkPriceFeed: "0xaebDA2c976cfd1eE1977Eac079B4382acb849325",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 850_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 850_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "1000BONK",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ENS",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "AAVE",
+                chainLinkPriceFeed: "0xaD1d5344AaDE45F43E596773Bcc4c423EAbdD034",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "1000PEPE",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "MINA",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "JTO",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "RDNT",
+                chainLinkPriceFeed: "0x20d0Fcab0ECFD078B036b6CAf1FaC69A6453b352",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "SUSHI",
+                chainLinkPriceFeed: "0xb2A8BA74cbca38508BA1632761b56C897060147C",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "1INCH",
+                chainLinkPriceFeed: "0x4bC735Ef24bf286983024CAd5D03f0738865Aaef",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "SNX",
+                chainLinkPriceFeed: "0x054296f0D036b95531B4E14aFB578B80CFb41252",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "PENDLE",
+                chainLinkPriceFeed: "0x66853E19d73c0F9301fe099c324A1E9726953433",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "NTRN",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "PYTH",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "GMX",
+                chainLinkPriceFeed: "0xDB98056FecFff59D032aB628337A4887110df3dB",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+        ],
+        mixedExecutors: ["0x587C4526d4134cad229E8beA5007ACf30Dc7e8Dd", "0xE6d7Ccc73e0F7E1063E2204ffFA7742CC25E3B38"],
+    },
+    "ailayertestnet": {
+        usd: "0x4069F86aDd448c60546A5363Da9215690086F8c3",
+        usdChainLinkPriceFeed: "0x3f3f5dF88dC9F13eac63DF89EC16ef6e7E25DdE7",
+        minPositionRouterExecutionFee: ethers.parseUnits("0.0003", "ether"),
+        minOrderBookExecutionFee: ethers.parseUnits("0.0004", "ether"),
+        sequencerUptimeFeed: "0xFdB631F5EE196F0ed6FAa767959853A9F217697D",
+        ignoreReferencePriceFeedError: true,
+        equ: "0x415823B3f7A95573a1c170890bcaA555428c3ac2",
+        efc: "0x44E0d7c4C91775A2020CDE53f5dD8Ee266dC1b3F",
+        routerV1: "0x103117557e955bb3e85E812C1C09D6F741a4DEEA",
+        feeDistributor: "0x36da16Bf9e1e9B583F0d7D05dA8DF78851E6Dd41",
+        farmRewardDistributorV2: "0xC3b18C3A3270118b8a1Baee4e3C936F158A1F16B",
+        markets: [
+            {
+                name: "ETH",
+                chainLinkPriceFeed: "0x639Fe6ab55C921f74e7fac1ee960C0B6293ba612",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: _100xCfg.baseCfg,
+                    feeRateCfg: _100xCfg.feeRateCfg,
+                    priceCfg: _100xCfg.priceCfg,
+                },
+            },
+            {
+                name: "BTC",
+                chainLinkPriceFeed: "0x6ce185860a4963106506C203335A2910413708e9",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._100xCfg.baseCfg,
+                        maxPositionLiquidity: 75_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _100xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._100xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 75_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "SOL",
+                chainLinkPriceFeed: "0x24ceA4b8ce57cdA5058b924B9B9987992450590c",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._50xCfg.baseCfg,
+                        maxPositionLiquidity: 5_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _50xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._50xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 5_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ARB",
+                chainLinkPriceFeed: "0xb2A824043730FE05F3DA2efaFa1CBbe83fa548D6",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "OP",
+                chainLinkPriceFeed: "0x205aaD468a11fd5D34fA7211bC6Bad5b3deB9b98",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "MATIC",
+                chainLinkPriceFeed: "0x52099D4523531f678Dfc568a7B1e5038aadcE1d6",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "AVAX",
+                chainLinkPriceFeed: "0x8bf61728eeDCE2F32c456454d87B5d6eD6150208",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "LINK",
+                chainLinkPriceFeed: "0x86E53CF1B870786351Da77A57575e79CB55812CB",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ORDI",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "DOGE",
+                chainLinkPriceFeed: "0x9A7FB1b3950837a8D9b40517626E11D4127C098C",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "XRP",
+                chainLinkPriceFeed: "0xB4AD57B52aB9141de9926a3e0C8dc6264c2ef205",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ADA",
+                chainLinkPriceFeed: "0xD9f615A9b820225edbA2d821c4A696a0924051c6",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "BNB",
+                chainLinkPriceFeed: "0x6970460aabF80C5BE983C6b74e5D06dEDCA95D4A",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "LTC",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._20xCfg.baseCfg,
+                        maxPositionLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _20xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._20xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 2_000_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ETC",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _20xCfg,
+            },
+            {
+                name: "FIL",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "SUI",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "TIA",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "DOT",
+                chainLinkPriceFeed: "0xa6bC5bAF2000424e90434bA7104ee399dEe80DEc",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "BLUR",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "INJ",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "SEI",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "TRB",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 900_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 900_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ATOM",
+                chainLinkPriceFeed: "0xCDA67618e51762235eacA373894F0C79256768fa",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 1_200_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "APT",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "NEAR",
+                chainLinkPriceFeed: "0xBF5C3fB2633e924598A46B9D07a174a9DBcF57C0",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "LDO",
+                chainLinkPriceFeed: "0xA43A34030088E6510FecCFb77E88ee5e7ed0fE64",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 900_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 900_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "DYDX",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "MKR",
+                chainLinkPriceFeed: "0xdE9f0894670c4EFcacF370426F10C3AD2Cdf147e",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 850_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 850_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "STX",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 900_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 900_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "FTM",
+                chainLinkPriceFeed: "0xFeaC1A3936514746e70170c0f539e70b23d36F19",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "RUNE",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 900_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 900_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "UNI",
+                chainLinkPriceFeed: "0x9C917083fDb403ab5ADbEC26Ee294f6EcAda2720",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: _10xCfg,
+            },
+            {
+                name: "CRV",
+                chainLinkPriceFeed: "0xaebDA2c976cfd1eE1977Eac079B4382acb849325",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 850_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 850_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "1000BONK",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "ENS",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "AAVE",
+                chainLinkPriceFeed: "0xaD1d5344AaDE45F43E596773Bcc4c423EAbdD034",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "1000PEPE",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "MINA",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "JTO",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "RDNT",
+                chainLinkPriceFeed: "0x20d0Fcab0ECFD078B036b6CAf1FaC69A6453b352",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "SUSHI",
+                chainLinkPriceFeed: "0xb2A8BA74cbca38508BA1632761b56C897060147C",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "1INCH",
+                chainLinkPriceFeed: "0x4bC735Ef24bf286983024CAd5D03f0738865Aaef",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "SNX",
+                chainLinkPriceFeed: "0x054296f0D036b95531B4E14aFB578B80CFb41252",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "PENDLE",
+                chainLinkPriceFeed: "0x66853E19d73c0F9301fe099c324A1E9726953433",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "NTRN",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "PYTH",
+                chainLinkPriceFeed: undefined,
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+            {
+                name: "GMX",
+                chainLinkPriceFeed: "0xDB98056FecFff59D032aB628337A4887110df3dB",
+                maxCumulativeDeltaDiff: defaultMaxCumulativeDeltaDiff,
+                marketCfg: {
+                    baseCfg: {
+                        ..._10xCfg.baseCfg,
+                        maxPositionLiquidity: 700_000n * 10n ** 6n,
+                    },
+                    feeRateCfg: _10xCfg.feeRateCfg,
+                    priceCfg: {
+                        ..._10xCfg.priceCfg,
+                        maxPriceImpactLiquidity: 700_000n * 10n ** 6n,
+                    },
+                },
+            },
+        ],
+        mixedExecutors: ["0x587C4526d4134cad229E8beA5007ACf30Dc7e8Dd", "0xE6d7Ccc73e0F7E1063E2204ffFA7742CC25E3B38"],
+    },
 };

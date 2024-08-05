@@ -1,0 +1,37 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MockFeeDistributor",
+  "sourceName": "contracts/test/MockFeeDistributor.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "balance",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "depositFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x608080604052346100165761010e908161001c8239f35b600080fdfe60806040526004361015601157600080fd5b6000803560e01c8063423c485a14606b5763b69ef8a814603057600080fd5b34606857807ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc36011260685760209054604051908152f35b80fd5b503460685760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126068578054600435810180911160ab57815580f35b6024827f4e487b710000000000000000000000000000000000000000000000000000000081526011600452fdfea2646970667358221220f26cf2c68da92d40962db9871613113dbf51f66594841cf8ff101d22b575106a64736f6c63430008170033",
+  "deployedBytecode": "0x60806040526004361015601157600080fd5b6000803560e01c8063423c485a14606b5763b69ef8a814603057600080fd5b34606857807ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc36011260685760209054604051908152f35b80fd5b503460685760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126068578054600435810180911160ab57815580f35b6024827f4e487b710000000000000000000000000000000000000000000000000000000081526011600452fdfea2646970667358221220f26cf2c68da92d40962db9871613113dbf51f66594841cf8ff101d22b575106a64736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

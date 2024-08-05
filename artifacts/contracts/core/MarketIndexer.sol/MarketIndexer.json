@@ -1,0 +1,146 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "MarketIndexer",
+  "sourceName": "contracts/core/MarketIndexer.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketManager",
+          "name": "_marketManager",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "name": "InvalidMarket",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "name": "MarketIndexAlreadyAssigned",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "uint24",
+          "name": "index",
+          "type": "uint24"
+        }
+      ],
+      "name": "MarketIndexAssigned",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "_market",
+          "type": "address"
+        }
+      ],
+      "name": "assignMarketIndex",
+      "outputs": [
+        {
+          "internalType": "uint24",
+          "name": "index",
+          "type": "uint24"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint24",
+          "name": "index",
+          "type": "uint24"
+        }
+      ],
+      "name": "indexMarkets",
+      "outputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "marketIndex",
+      "outputs": [
+        {
+          "internalType": "uint24",
+          "name": "",
+          "type": "uint24"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "name": "marketIndexes",
+      "outputs": [
+        {
+          "internalType": "uint24",
+          "name": "index",
+          "type": "uint24"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "marketManager",
+      "outputs": [
+        {
+          "internalType": "contract IMarketManager",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x60a03461007157601f61055a38819003918201601f19168301916001600160401b038311848410176100765780849260209460405283398101031261007157516001600160a01b0381168103610071576080526040516104cd908161008d823960805181818161015401526102170152f35b600080fd5b634e487b7160e01b600052604160045260246000fdfe6080604081815260048036101561001557600080fd5b600092833560e01c908163174009a41461042c575080633b52127f1461017857806341ed2c12146101095780638c7adc15146100c55763f1f6c0e71461005a57600080fd5b346100c15760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100c1573562ffffff81168091036100c157818373ffffffffffffffffffffffffffffffffffffffff9260209552600285522054169051908152f35b8280fd5b50503461010557817ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126101055762ffffff60209254169051908152f35b5080fd5b50503461010557817ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc360112610105576020905173ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000168152f35b5091903461010557602092837ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100c157803573ffffffffffffffffffffffffffffffffffffffff808216809203610428578185526001865262ffffff908185872054166103f957866024918651928380927f93f4687300000000000000000000000000000000000000000000000000000000825287898301527f0000000000000000000000000000000000000000000000000000000000000000165afa9081156103ef578691610354575b501561032657845492818416908282146102fa57509060017f777cdea93a6c245e325eb2fcaf3a176c3355f6cf1a3c1c1e24af6659d9754c01920116938493847fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000080921617875583875260018852848288209182541617905583865260028752808620837fffffffffffffffffffffffff0000000000000000000000000000000000000000825416179055519480a38152f35b8660116024927f4e487b7100000000000000000000000000000000000000000000000000000000835252fd5b5060249251917f0eaba4c0000000000000000000000000000000000000000000000000000000008352820152fd5b9050863d88116103e8575b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f820116820182811067ffffffffffffffff8211176103bc57889183918852810103126103b8575180151581036103b85738610247565b8580fd5b6024886041887f4e487b7100000000000000000000000000000000000000000000000000000000835252fd5b503d61035f565b85513d88823e3d90fd5b505060249251917f43d509d2000000000000000000000000000000000000000000000000000000008352820152fd5b8480fd5b92919050346104935760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc360112610493573573ffffffffffffffffffffffffffffffffffffffff81168091036104935783526001602090815292205462ffffff168152f35b8380fdfea2646970667358221220305eb8a853ba919727af8a357bb5b233896e098c4ca806a72e2c66efc1c6fea164736f6c63430008170033",
+  "deployedBytecode": "0x6080604081815260048036101561001557600080fd5b600092833560e01c908163174009a41461042c575080633b52127f1461017857806341ed2c12146101095780638c7adc15146100c55763f1f6c0e71461005a57600080fd5b346100c15760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100c1573562ffffff81168091036100c157818373ffffffffffffffffffffffffffffffffffffffff9260209552600285522054169051908152f35b8280fd5b50503461010557817ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126101055762ffffff60209254169051908152f35b5080fd5b50503461010557817ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc360112610105576020905173ffffffffffffffffffffffffffffffffffffffff7f0000000000000000000000000000000000000000000000000000000000000000168152f35b5091903461010557602092837ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126100c157803573ffffffffffffffffffffffffffffffffffffffff808216809203610428578185526001865262ffffff908185872054166103f957866024918651928380927f93f4687300000000000000000000000000000000000000000000000000000000825287898301527f0000000000000000000000000000000000000000000000000000000000000000165afa9081156103ef578691610354575b501561032657845492818416908282146102fa57509060017f777cdea93a6c245e325eb2fcaf3a176c3355f6cf1a3c1c1e24af6659d9754c01920116938493847fffffffffffffffffffffffffffffffffffffffffffffffffffffffffff00000080921617875583875260018852848288209182541617905583865260028752808620837fffffffffffffffffffffffff0000000000000000000000000000000000000000825416179055519480a38152f35b8660116024927f4e487b7100000000000000000000000000000000000000000000000000000000835252fd5b5060249251917f0eaba4c0000000000000000000000000000000000000000000000000000000008352820152fd5b9050863d88116103e8575b7fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0601f820116820182811067ffffffffffffffff8211176103bc57889183918852810103126103b8575180151581036103b85738610247565b8580fd5b6024886041887f4e487b7100000000000000000000000000000000000000000000000000000000835252fd5b503d61035f565b85513d88823e3d90fd5b505060249251917f43d509d2000000000000000000000000000000000000000000000000000000008352820152fd5b8480fd5b92919050346104935760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc360112610493573573ffffffffffffffffffffffffffffffffffffffff81168091036104935783526001602090815292205462ffffff168152f35b8380fdfea2646970667358221220305eb8a853ba919727af8a357bb5b233896e098c4ca806a72e2c66efc1c6fea164736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

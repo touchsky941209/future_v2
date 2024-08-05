@@ -68,7 +68,7 @@ async function main() {
     await router.waitForDeployment();
     expectAddr(await router.getAddress(), routerAddr);
     console.log(`Router deployed to: ${await router.getAddress()}`);
-
+    
     const OrderBook = await ethers.getContractFactory("OrderBook");
     const orderBook = await OrderBook.deploy(
         network.usd,

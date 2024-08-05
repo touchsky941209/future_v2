@@ -1,0 +1,280 @@
+{
+  "id": "2495f4cf6b324840f89d9ac5ea32c26a",
+  "_format": "hh-sol-build-info-1",
+  "solcVersion": "0.8.23",
+  "solcLongVersion": "0.8.23+commit.f704f362",
+  "input": {
+    "language": "Solidity",
+    "sources": {
+      "contracts/test/MockFeeDistributor.sol": {
+        "content": "// SPDX-License-Identifier: BUSL-1.1\r\npragma solidity =0.8.23;\r\n\r\ncontract MockFeeDistributor {\r\n    uint256 public balance;\r\n\r\n    function depositFee(uint256 amount) external {\r\n        balance += amount;\r\n    }\r\n}\r\n"
+      }
+    },
+    "settings": {
+      "evmVersion": "paris",
+      "viaIR": true,
+      "optimizer": {
+        "enabled": true,
+        "runs": 100000000
+      },
+      "outputSelection": {
+        "*": {
+          "*": [
+            "abi",
+            "evm.bytecode",
+            "evm.deployedBytecode",
+            "evm.methodIdentifiers",
+            "metadata"
+          ],
+          "": [
+            "ast"
+          ]
+        }
+      }
+    }
+  },
+  "output": {
+    "contracts": {
+      "contracts/test/MockFeeDistributor.sol": {
+        "MockFeeDistributor": {
+          "abi": [
+            {
+              "inputs": [],
+              "name": "balance",
+              "outputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "",
+                  "type": "uint256"
+                }
+              ],
+              "stateMutability": "view",
+              "type": "function"
+            },
+            {
+              "inputs": [
+                {
+                  "internalType": "uint256",
+                  "name": "amount",
+                  "type": "uint256"
+                }
+              ],
+              "name": "depositFee",
+              "outputs": [],
+              "stateMutability": "nonpayable",
+              "type": "function"
+            }
+          ],
+          "evm": {
+            "bytecode": {
+              "functionDebugData": {},
+              "generatedSources": [],
+              "linkReferences": {},
+              "object": "608080604052346100165761010e908161001c8239f35b600080fdfe60806040526004361015601157600080fd5b6000803560e01c8063423c485a14606b5763b69ef8a814603057600080fd5b34606857807ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc36011260685760209054604051908152f35b80fd5b503460685760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126068578054600435810180911160ab57815580f35b6024827f4e487b710000000000000000000000000000000000000000000000000000000081526011600452fdfea2646970667358221220f26cf2c68da92d40962db9871613113dbf51f66594841cf8ff101d22b575106a64736f6c63430008170033",
+              "opcodes": "PUSH1 0x80 DUP1 PUSH1 0x40 MSTORE CALLVALUE PUSH2 0x16 JUMPI PUSH2 0x10E SWAP1 DUP2 PUSH2 0x1C DUP3 CODECOPY RETURN JUMPDEST PUSH1 0x0 DUP1 REVERT INVALID PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH1 0x11 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x0 DUP1 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x423C485A EQ PUSH1 0x6B JUMPI PUSH4 0xB69EF8A8 EQ PUSH1 0x30 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE PUSH1 0x68 JUMPI DUP1 PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC CALLDATASIZE ADD SLT PUSH1 0x68 JUMPI PUSH1 0x20 SWAP1 SLOAD PUSH1 0x40 MLOAD SWAP1 DUP2 MSTORE RETURN JUMPDEST DUP1 REVERT JUMPDEST POP CALLVALUE PUSH1 0x68 JUMPI PUSH1 0x20 PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC CALLDATASIZE ADD SLT PUSH1 0x68 JUMPI DUP1 SLOAD PUSH1 0x4 CALLDATALOAD DUP2 ADD DUP1 SWAP2 GT PUSH1 0xAB JUMPI DUP2 SSTORE DUP1 RETURN JUMPDEST PUSH1 0x24 DUP3 PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 DUP2 MSTORE PUSH1 0x11 PUSH1 0x4 MSTORE REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLCODE PUSH13 0xF2C68DA92D40962DB987161311 RETURNDATASIZE 0xBF MLOAD 0xF6 PUSH6 0x94841CF8FF10 SAR 0x22 0xB5 PUSH22 0x106A64736F6C63430008170033000000000000000000 ",
+              "sourceMap": "66:150:0:-:0;;;;;;;;;;;;;;;;;"
+            },
+            "deployedBytecode": {
+              "functionDebugData": {},
+              "generatedSources": [],
+              "immutableReferences": {},
+              "linkReferences": {},
+              "object": "60806040526004361015601157600080fd5b6000803560e01c8063423c485a14606b5763b69ef8a814603057600080fd5b34606857807ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc36011260685760209054604051908152f35b80fd5b503460685760207ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffc3601126068578054600435810180911160ab57815580f35b6024827f4e487b710000000000000000000000000000000000000000000000000000000081526011600452fdfea2646970667358221220f26cf2c68da92d40962db9871613113dbf51f66594841cf8ff101d22b575106a64736f6c63430008170033",
+              "opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x4 CALLDATASIZE LT ISZERO PUSH1 0x11 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x0 DUP1 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0x423C485A EQ PUSH1 0x6B JUMPI PUSH4 0xB69EF8A8 EQ PUSH1 0x30 JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST CALLVALUE PUSH1 0x68 JUMPI DUP1 PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC CALLDATASIZE ADD SLT PUSH1 0x68 JUMPI PUSH1 0x20 SWAP1 SLOAD PUSH1 0x40 MLOAD SWAP1 DUP2 MSTORE RETURN JUMPDEST DUP1 REVERT JUMPDEST POP CALLVALUE PUSH1 0x68 JUMPI PUSH1 0x20 PUSH32 0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC CALLDATASIZE ADD SLT PUSH1 0x68 JUMPI DUP1 SLOAD PUSH1 0x4 CALLDATALOAD DUP2 ADD DUP1 SWAP2 GT PUSH1 0xAB JUMPI DUP2 SSTORE DUP1 RETURN JUMPDEST PUSH1 0x24 DUP3 PUSH32 0x4E487B7100000000000000000000000000000000000000000000000000000000 DUP2 MSTORE PUSH1 0x11 PUSH1 0x4 MSTORE REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 CALLCODE PUSH13 0xF2C68DA92D40962DB987161311 RETURNDATASIZE 0xBF MLOAD 0xF6 PUSH6 0x94841CF8FF10 SAR 0x22 0xB5 PUSH22 0x106A64736F6C63430008170033000000000000000000 ",
+              "sourceMap": "66:150:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;"
+            },
+            "methodIdentifiers": {
+              "balance()": "b69ef8a8",
+              "depositFee(uint256)": "423c485a"
+            }
+          },
+          "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"balance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"depositFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"contracts/test/MockFeeDistributor.sol\":\"MockFeeDistributor\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":100000000},\"remappings\":[],\"viaIR\":true},\"sources\":{\"contracts/test/MockFeeDistributor.sol\":{\"keccak256\":\"0x335bc3dbf9d7cd949a9bf2f5356329b75169259388f1f485c53fe99e2fae2cf8\",\"license\":\"BUSL-1.1\",\"urls\":[\"bzz-raw://4beb82de7350fb90b55e30d2bdb9a4ea12e85fbc6f3facf5fb3061cf7a095d71\",\"dweb:/ipfs/QmeGcZXV2XLaWQ7g2PQNvsgV3HdJLaaDpgoG97JVVx3DdS\"]}},\"version\":1}"
+        }
+      }
+    },
+    "sources": {
+      "contracts/test/MockFeeDistributor.sol": {
+        "ast": {
+          "absolutePath": "contracts/test/MockFeeDistributor.sol",
+          "exportedSymbols": {
+            "MockFeeDistributor": [
+              14
+            ]
+          },
+          "id": 15,
+          "license": "BUSL-1.1",
+          "nodeType": "SourceUnit",
+          "nodes": [
+            {
+              "id": 1,
+              "literals": [
+                "solidity",
+                "=",
+                "0.8",
+                ".23"
+              ],
+              "nodeType": "PragmaDirective",
+              "src": "38:24:0"
+            },
+            {
+              "abstract": false,
+              "baseContracts": [],
+              "canonicalName": "MockFeeDistributor",
+              "contractDependencies": [],
+              "contractKind": "contract",
+              "fullyImplemented": true,
+              "id": 14,
+              "linearizedBaseContracts": [
+                14
+              ],
+              "name": "MockFeeDistributor",
+              "nameLocation": "75:18:0",
+              "nodeType": "ContractDefinition",
+              "nodes": [
+                {
+                  "constant": false,
+                  "functionSelector": "b69ef8a8",
+                  "id": 3,
+                  "mutability": "mutable",
+                  "name": "balance",
+                  "nameLocation": "116:7:0",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 14,
+                  "src": "101:22:0",
+                  "stateVariable": true,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 2,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "101:7:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "public"
+                },
+                {
+                  "body": {
+                    "id": 12,
+                    "nodeType": "Block",
+                    "src": "177:36:0",
+                    "statements": [
+                      {
+                        "expression": {
+                          "id": 10,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "id": 8,
+                            "name": "balance",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 3,
+                            "src": "188:7:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "nodeType": "Assignment",
+                          "operator": "+=",
+                          "rightHandSide": {
+                            "id": 9,
+                            "name": "amount",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 5,
+                            "src": "199:6:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_uint256",
+                              "typeString": "uint256"
+                            }
+                          },
+                          "src": "188:17:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "id": 11,
+                        "nodeType": "ExpressionStatement",
+                        "src": "188:17:0"
+                      }
+                    ]
+                  },
+                  "functionSelector": "423c485a",
+                  "id": 13,
+                  "implemented": true,
+                  "kind": "function",
+                  "modifiers": [],
+                  "name": "depositFee",
+                  "nameLocation": "141:10:0",
+                  "nodeType": "FunctionDefinition",
+                  "parameters": {
+                    "id": 6,
+                    "nodeType": "ParameterList",
+                    "parameters": [
+                      {
+                        "constant": false,
+                        "id": 5,
+                        "mutability": "mutable",
+                        "name": "amount",
+                        "nameLocation": "160:6:0",
+                        "nodeType": "VariableDeclaration",
+                        "scope": 13,
+                        "src": "152:14:0",
+                        "stateVariable": false,
+                        "storageLocation": "default",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_uint256",
+                          "typeString": "uint256"
+                        },
+                        "typeName": {
+                          "id": 4,
+                          "name": "uint256",
+                          "nodeType": "ElementaryTypeName",
+                          "src": "152:7:0",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_uint256",
+                            "typeString": "uint256"
+                          }
+                        },
+                        "visibility": "internal"
+                      }
+                    ],
+                    "src": "151:16:0"
+                  },
+                  "returnParameters": {
+                    "id": 7,
+                    "nodeType": "ParameterList",
+                    "parameters": [],
+                    "src": "177:0:0"
+                  },
+                  "scope": 14,
+                  "src": "132:81:0",
+                  "stateMutability": "nonpayable",
+                  "virtual": false,
+                  "visibility": "external"
+                }
+              ],
+              "scope": 15,
+              "src": "66:150:0",
+              "usedErrors": [],
+              "usedEvents": []
+            }
+          ],
+          "src": "38:180:0"
+        },
+        "id": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "Constants",
+  "sourceName": "contracts/libraries/Constants.sol",
+  "abi": [],
+  "bytecode": "0x60808060405234601757603a9081601d823930815050f35b600080fdfe600080fdfea2646970667358221220137dc724253a95eb8e3a7a87fcf910d6cdf8710bee5d52a784b44a56d7d3d26e64736f6c63430008170033",
+  "deployedBytecode": "0x600080fdfea2646970667358221220137dc724253a95eb8e3a7a87fcf910d6cdf8710bee5d52a784b44a56d7d3d26e64736f6c63430008170033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

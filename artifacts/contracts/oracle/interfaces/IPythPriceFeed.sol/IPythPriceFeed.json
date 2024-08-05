@@ -1,0 +1,386 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IPythPriceFeed",
+  "sourceName": "contracts/oracle/interfaces/IPythPriceFeed.sol",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "int256",
+          "name": "marketPrice",
+          "type": "int256"
+        }
+      ],
+      "name": "InvalidMarketPrice",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "NotInitialized",
+      "type": "error"
+    },
+    {
+      "inputs": [],
+      "name": "ReferencePriceFeedNotSet",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "timestamp",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "blockTimestamp",
+          "type": "uint256"
+        }
+      ],
+      "name": "StalePriceTimestamp",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "pythAssetId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "maxDeviationRatio",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "validTimePeriod",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "referencePriceAdjustmentMagnification",
+              "type": "uint32"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct IPythPriceFeed.MarketConfig",
+          "name": "newConfig",
+          "type": "tuple"
+        }
+      ],
+      "name": "MarketConfigChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint160",
+          "name": "priceX96",
+          "type": "uint160"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint160",
+          "name": "minPriceX96",
+          "type": "uint160"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint160",
+          "name": "maxPriceX96",
+          "type": "uint160"
+        }
+      ],
+      "name": "PriceUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "name": "getMaxPriceX96",
+      "outputs": [
+        {
+          "internalType": "uint160",
+          "name": "priceX96",
+          "type": "uint160"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "name": "getMinPriceX96",
+      "outputs": [
+        {
+          "internalType": "uint160",
+          "name": "priceX96",
+          "type": "uint160"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "ignoreReferencePriceFeedError",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isUpdater",
+      "outputs": [
+        {
+          "internalType": "bool",
+          "name": "active",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "name": "latestPrices",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint64",
+              "name": "updateTimestamp",
+              "type": "uint64"
+            },
+            {
+              "internalType": "uint160",
+              "name": "maxPriceX96",
+              "type": "uint160"
+            },
+            {
+              "internalType": "uint160",
+              "name": "minPriceX96",
+              "type": "uint160"
+            },
+            {
+              "internalType": "uint64",
+              "name": "updateBlockTimestamp",
+              "type": "uint64"
+            }
+          ],
+          "internalType": "struct IPythPriceFeed.PricePack",
+          "name": "packedData",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "name": "marketConfigs",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "pythAssetId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "maxDeviationRatio",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "validTimePeriod",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "referencePriceAdjustmentMagnification",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct IPythPriceFeed.MarketConfig",
+          "name": "marketConfig",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "bytes32",
+              "name": "pythAssetId",
+              "type": "bytes32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "maxDeviationRatio",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "validTimePeriod",
+              "type": "uint32"
+            },
+            {
+              "internalType": "uint32",
+              "name": "referencePriceAdjustmentMagnification",
+              "type": "uint32"
+            }
+          ],
+          "internalType": "struct IPythPriceFeed.MarketConfig",
+          "name": "marketConfig",
+          "type": "tuple"
+        }
+      ],
+      "name": "setMarketConfig",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "components": [
+            {
+              "internalType": "contract IMarketDescriptor",
+              "name": "market",
+              "type": "address"
+            },
+            {
+              "internalType": "uint160",
+              "name": "priceX96",
+              "type": "uint160"
+            }
+          ],
+          "internalType": "struct IPythPriceFeed.MarketPrice[]",
+          "name": "marketPrices",
+          "type": "tuple[]"
+        },
+        {
+          "internalType": "uint64",
+          "name": "timestamp",
+          "type": "uint64"
+        }
+      ],
+      "name": "setPriceX96s",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "bool",
+          "name": "active",
+          "type": "bool"
+        }
+      ],
+      "name": "setUpdater",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stableMarketAssetId",
+      "outputs": [
+        {
+          "internalType": "bytes32",
+          "name": "id",
+          "type": "bytes32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "stableMarketValidTimePeriod",
+      "outputs": [
+        {
+          "internalType": "uint32",
+          "name": "period",
+          "type": "uint32"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

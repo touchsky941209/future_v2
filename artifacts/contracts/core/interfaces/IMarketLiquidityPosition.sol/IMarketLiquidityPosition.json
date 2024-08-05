@@ -1,0 +1,453 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IMarketLiquidityPosition",
+  "sourceName": "contracts/core/interfaces/IMarketLiquidityPosition.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "Side",
+          "name": "sideAfter",
+          "type": "uint8"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "netSizeAfter",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "liquidationBufferNetSizeAfter",
+          "type": "uint128"
+        }
+      ],
+      "name": "GlobalLiquidityPositionNetPositionChanged",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "unrealizedPnLGrowthAfterX64",
+          "type": "int256"
+        }
+      ],
+      "name": "GlobalLiquidityPositionPnLGrowthIncreasedByFundingFee",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "liquidityFee",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "unrealizedPnLGrowthAfterX64",
+          "type": "int256"
+        }
+      ],
+      "name": "GlobalLiquidityPositionPnLGrowthIncreasedByTradingFee",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "marginDelta",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "marginAfter",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "liquidityAfter",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "realizedPnLDelta",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "LiquidityPositionDecreased",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "marginDelta",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "marginAfter",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint128",
+          "name": "liquidityAfter",
+          "type": "uint128"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "realizedPnLDelta",
+          "type": "int256"
+        }
+      ],
+      "name": "LiquidityPositionIncreased",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "liquidator",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "liquidationLoss",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "unrealizedPnLGrowthAfterX64",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "feeReceiver",
+          "type": "address"
+        }
+      ],
+      "name": "LiquidityPositionLiquidated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint160",
+          "name": "previousSPPriceX96",
+          "type": "uint160"
+        }
+      ],
+      "name": "PreviousSPPriceInitialized",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "int256",
+          "name": "unrealizedPnLGrowthAfterX64",
+          "type": "int256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint160",
+          "name": "previousSPPriceAfterX96",
+          "type": "uint160"
+        }
+      ],
+      "name": "SettlementPointReached",
+      "type": "event"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint128",
+          "name": "marginDelta",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint128",
+          "name": "liquidityDelta",
+          "type": "uint128"
+        },
+        {
+          "internalType": "address",
+          "name": "receiver",
+          "type": "address"
+        }
+      ],
+      "name": "decreaseLiquidityPosition",
+      "outputs": [
+        {
+          "internalType": "uint128",
+          "name": "marginAfter",
+          "type": "uint128"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        }
+      ],
+      "name": "globalLiquidityPositions",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint128",
+              "name": "netSize",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "liquidationBufferNetSize",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint160",
+              "name": "previousSPPriceX96",
+              "type": "uint160"
+            },
+            {
+              "internalType": "Side",
+              "name": "side",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint128",
+              "name": "liquidity",
+              "type": "uint128"
+            },
+            {
+              "internalType": "int256",
+              "name": "unrealizedPnLGrowthX64",
+              "type": "int256"
+            }
+          ],
+          "internalType": "struct IMarketLiquidityPosition.GlobalLiquidityPosition",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "uint128",
+          "name": "marginDelta",
+          "type": "uint128"
+        },
+        {
+          "internalType": "uint128",
+          "name": "liquidityDelta",
+          "type": "uint128"
+        }
+      ],
+      "name": "increaseLiquidityPosition",
+      "outputs": [
+        {
+          "internalType": "uint128",
+          "name": "marginAfter",
+          "type": "uint128"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "feeReceiver",
+          "type": "address"
+        }
+      ],
+      "name": "liquidateLiquidityPosition",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "contract IMarketDescriptor",
+          "name": "market",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "liquidityPositions",
+      "outputs": [
+        {
+          "components": [
+            {
+              "internalType": "uint128",
+              "name": "margin",
+              "type": "uint128"
+            },
+            {
+              "internalType": "uint128",
+              "name": "liquidity",
+              "type": "uint128"
+            },
+            {
+              "internalType": "int256",
+              "name": "entryUnrealizedPnLGrowthX64",
+              "type": "int256"
+            }
+          ],
+          "internalType": "struct IMarketLiquidityPosition.LiquidityPosition",
+          "name": "",
+          "type": "tuple"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
